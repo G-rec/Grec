@@ -17,6 +17,6 @@ public final class Constants {
     public static final double BIG_INVERSE = 2.22044604925031308085e-16;
 
     public static final double EPSILON = 1.0E-6;
-    public static final double PI = 3.14156295;
+    
     private Constants() { }
 }
