@@ -1,6 +1,6 @@
-package com.cuc.grec.math.structure;
+package cn.cuc.grec.math.structure;
 
-import com.cuc.grec.commom.IndexOutOfRangeException;
+import cn.cuc.grec.commom.IndexOutOfRangeException;
 
 import java.util.Vector;
 

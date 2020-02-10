@@ -1,4 +1,4 @@
-package com.cuc.grec.commom;
+package cn.cuc.grec.commom;
 
 /**
  * Exception thrown when a matrix or vector is accessed at an index, or dimension,
@@ -6,10 +6,9 @@ package com.cuc.grec.commom;
  *
  * @author Liming Liu
  */
-public class IndexOutOfRangeException extends IllegalArgumentException {
+public class  IndexOutOfRangeException extends IllegalArgumentException {
     /**
-     * Construct a new index out of range exception with the from the given
-     * format.
+     * Construct a new index out of range exception with the given format.
      *
      * @param index       the index that the function attempted to get.
      * @param cardinality the MAXIMUM index that this data structure supports.

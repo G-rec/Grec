@@ -1,4 +1,4 @@
-package com.cuc.grec.commom;
+package cn.cuc.grec.commom;
 
 /**
  * The class {@code GrecException} and its subclasses are a form of
