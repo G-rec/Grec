@@ -14,9 +14,9 @@ public abstract class AbstractMatrix implements Matrix {
     }
 
     @Override
-    public Matrix clone() {
+    public AbstractMatrix clone() {
         try {
-            return (Matrix) super.clone();
+            return (AbstractMatrix) super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }

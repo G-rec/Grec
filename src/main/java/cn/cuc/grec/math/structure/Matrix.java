@@ -10,7 +10,7 @@ import java.util.Vector;
  *
  * @author Liming Liu
  */
-public interface Matrix extends Cloneable {
+public interface Matrix extends Cloneable, DataSet {
     /**
      * @return a clone of the recipient
      */
