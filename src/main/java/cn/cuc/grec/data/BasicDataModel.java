@@ -5,8 +5,9 @@ import cn.cuc.grec.data.loader.Loadable;
 import cn.cuc.grec.data.saver.Savable;
 import cn.cuc.grec.data.splitter.Splitable;
 import cn.cuc.grec.math.structure.DataSet;
+import org.jetbrains.annotations.NotNull;
 
-public abstract class AbstractDataModel implements DataModel {
+public class BasicDataModel implements DataModel{
     protected Loadable loader;
     protected Savable saver;
     protected Convertable converter;
@@ -16,7 +17,7 @@ public abstract class AbstractDataModel implements DataModel {
     protected DataSet trainData;
     protected DataSet predictData;
 
-    public AbstractDataModel(Loadable loader, Savable saver, Splitable splitter) {
+    public BasicDataModel(Loadable loader, Savable saver, Splitable splitter) {
         this.loader = loader;
         this.saver = saver;
         this.splitter = splitter;
@@ -26,27 +27,30 @@ public abstract class AbstractDataModel implements DataModel {
         this.predictData = null;
     }
 
-    public AbstractDataModel(@org.jetbrains.annotations.NotNull Convertable converter) {
+    public BasicDataModel(@org.jetbrains.annotations.NotNull Convertable converter) {
         this.converter = converter;
         this.converter.convert();
         this.inData = converter.getDataModel();
     }
 
     @Override
-    public void load() {
+    public DataModel load() {
         this.inData = (DataSet) this.loader.load();
+        return this;
     }
 
     @Override
-    public void save() {
+    public DataModel save() {
         this.saver.save(this.inData);
+        return this;
     }
 
     @Override
-    public void split() {
+    public DataModel split() {
         this.splitter.split(this.inData);
         this.trainData = this.splitter.getTrainData();
         this.predictData = this.splitter.getPredictData();
+        return this;
     }
 
     @Override

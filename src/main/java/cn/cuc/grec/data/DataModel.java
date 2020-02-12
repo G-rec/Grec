@@ -4,11 +4,11 @@ import cn.cuc.grec.math.structure.DataSet;
 
 public interface DataModel extends DataSet {
 
-    void load();
+    DataModel load();
 
-    void save();
+    DataModel save();
 
-    void split();
+    DataModel split();
 
     DataSet getTrainData();
 

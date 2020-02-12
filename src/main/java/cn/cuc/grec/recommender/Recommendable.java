@@ -6,17 +6,17 @@ import cn.cuc.grec.math.structure.DataSet;
 
 public interface Recommendable {
 
-    void train() throws GrecException;
+    Recommendable train() throws GrecException;
 
-    void predict() throws GrecException;
+    Recommendable predict() throws GrecException;
 
     DataModel getResult() throws GrecException;
 
-    void saveResult() throws GrecException;
+    Recommendable saveResult() throws GrecException;
 
-    void loadRecommender() throws GrecException;
+    Recommendable loadRecommender() throws GrecException;
 
-    void saveRecommender() throws GrecException;
+    Recommendable saveRecommender() throws GrecException;
 
-    void cleanUp() throws GrecException;
+    Recommendable cleanUp() throws GrecException;
 }

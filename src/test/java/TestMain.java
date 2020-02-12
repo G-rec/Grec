@@ -1,6 +1,6 @@
 import cn.cuc.grec.commom.GrecException;
 import cn.cuc.grec.data.loader.BasicMatrixLoader;
-import cn.cuc.grec.data.BasicMatrixDataModel;
+import cn.cuc.grec.data.BasicDataModel;
 import cn.cuc.grec.data.DataModel;
 import cn.cuc.grec.data.saver.BasicMareixSaver;
 import cn.cuc.grec.data.splitter.BasicSplitter;
@@ -23,8 +23,21 @@ public class TestMain {
 
         // 先这么写……理想状态应该是先构建，就是一堆new之后，再统一载入数据之类的计算
 
+        Filtable out = new BasicFilter(
+                new BasicRecommender(
+                    new BasicDataModel(
+                            new BasicMatrixLoader(""),
+                            new BasicMareixSaver(""),
+                            new BasicSplitter()
+                    ).load()
+                ).train()
+                .predict()
+                .getResult()).filt()
+                             .filt()
+                             .merge(new BasicFilter(null));
+
         // 载入数据
-        DataModel data = new BasicMatrixDataModel(
+        DataModel data = new BasicDataModel(
                 new BasicMatrixLoader(""),
                 new BasicMareixSaver(""),
                 new BasicSplitter());

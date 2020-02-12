@@ -11,27 +11,32 @@ public class BasicRecommender extends AbstractRecommender {
     }
 
     @Override
-    public void train() throws GrecException {
+    public Recommendable train() throws GrecException {
 
+        return this;
     }
 
     @Override
-    public void predict() throws GrecException {
+    public Recommendable predict() throws GrecException {
 
+        return this;
     }
 
     @Override
-    public void loadRecommender() throws GrecException {
+    public Recommendable loadRecommender() throws GrecException {
 
+        return this;
     }
 
     @Override
-    public void saveRecommender() throws GrecException {
+    public Recommendable saveRecommender() throws GrecException {
 
+        return this;
     }
 
     @Override
-    public void cleanUp() throws GrecException {
+    public Recommendable cleanUp() throws GrecException {
 
+        return this;
     }
 }

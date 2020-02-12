@@ -18,7 +18,8 @@ public abstract class AbstractRecommender implements Recommendable {
     }
 
     @Override
-    public void saveResult() throws GrecException {
+    public Recommendable saveResult() throws GrecException {
         this.result.save();
+        return this;
     }
 }
