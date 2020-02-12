@@ -10,8 +10,9 @@ public class BasicEvaluator extends AbstractEvaluator {
     }
 
     @Override
-    public void evaluate() {
+    public Evaluatable evaluate() {
 
+        return this;
     }
 
 }
