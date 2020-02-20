@@ -35,6 +35,22 @@ public abstract class AbstractMatrix implements Matrix {
 
     @Override
     public String toString() {
-        return super.toString();
+        int maxRowsToDisplay = 10;
+
+        StringBuilder s = new StringBuilder("{\n");
+        for (int rowIndex = 0; rowIndex < maxRowsToDisplay && rowIndex < rowSize(); rowIndex++) {
+            Vect vector = getRow(rowIndex);
+            s.append(" ").append(rowIndex)
+                    .append(" =>\t")
+                    .append(vector.toString())
+                    .append('\n');
+        }
+
+        String returnString = s.toString();
+        if (maxRowsToDisplay < rowSize())
+            return returnString + ("... \n}");
+        else {
+            return returnString + ("}");
+        }
     }
 }

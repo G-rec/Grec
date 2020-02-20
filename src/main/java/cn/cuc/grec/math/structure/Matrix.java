@@ -45,7 +45,7 @@ public interface Matrix extends Cloneable, DataSet {
      * @return a copy of the row you need
      * @throws IndexOutOfRangeException if the index is out of bounds
      */
-    Vector<Double> getRow(int rowIndex) throws IndexOutOfRangeException;
+    Vect getRow(int rowIndex) throws IndexOutOfRangeException;
 
     /**
      * Return a reference to a row.
@@ -56,7 +56,7 @@ public interface Matrix extends Cloneable, DataSet {
      * @return a reference of the row you need
      * @throws IndexOutOfRangeException if the index is out of bounds
      */
-    Vector<Double> viewRow(int rowIndex) throws IndexOutOfRangeException;
+    Vect viewRow(int rowIndex) throws IndexOutOfRangeException;
 
     /**
      * Return a new copied column of the given index.
@@ -67,7 +67,7 @@ public interface Matrix extends Cloneable, DataSet {
      * @return a copy of the column you need
      * @throws IndexOutOfRangeException if the index is out of bounds
      */
-    Vector<Double> getCol(int colIndex) throws IndexOutOfRangeException;
+    Vect getCol(int colIndex) throws IndexOutOfRangeException;
 
     /**
      * Return a reference to a column.
@@ -78,7 +78,7 @@ public interface Matrix extends Cloneable, DataSet {
      * @return a reference of the column you need
      * @throws IndexOutOfRangeException if the index is out of bounds
      */
-    Vector<Double> viewCol(int rowIndex) throws IndexOutOfRangeException;
+    Vect viewCol(int rowIndex) throws IndexOutOfRangeException;
 
     /**
      * @return a formatted String suitable for output
