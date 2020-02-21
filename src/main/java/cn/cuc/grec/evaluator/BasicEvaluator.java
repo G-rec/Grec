@@ -15,4 +15,9 @@ public class BasicEvaluator extends AbstractEvaluator {
         return this;
     }
 
+    @Override
+    public String getResult() {
+        return "This is an evaluator. ";
+    }
+
 }

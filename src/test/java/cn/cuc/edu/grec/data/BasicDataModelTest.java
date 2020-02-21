@@ -22,11 +22,5 @@ public class BasicDataModelTest {
 
         DataModel dataModel = new BasicDataModel(new BasicMatrixConverter(new BasicDenseMatrix(data)), null, null);
         System.out.println(dataModel.getPredictData());
-
-        dataModel.load();
-        System.out.println(dataModel.getPredictData());
-
-        dataModel.split();
-        System.out.println(dataModel.getPredictData());
     }
 }

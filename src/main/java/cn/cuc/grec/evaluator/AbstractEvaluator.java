@@ -8,9 +8,4 @@ public abstract class AbstractEvaluator implements Evaluatable {
     public AbstractEvaluator(Recommendable recommender) {
         this.recommender = recommender;
     }
-
-    @Override
-    public String getResult() {
-        return "This is an evaluator. ";
-    }
 }

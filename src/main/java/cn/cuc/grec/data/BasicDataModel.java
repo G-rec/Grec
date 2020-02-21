@@ -6,6 +6,7 @@ import cn.cuc.grec.data.saver.Savable;
 import cn.cuc.grec.data.splitter.DefaultSplitter;
 import cn.cuc.grec.data.splitter.Splittable;
 import cn.cuc.grec.math.structure.DataSet;
+import org.jetbrains.annotations.NotNull;
 
 public class BasicDataModel implements DataModel{
     protected Loadable loader;
@@ -17,20 +18,29 @@ public class BasicDataModel implements DataModel{
     protected DataSet trainData;
     protected DataSet predictData;
 
-    public BasicDataModel(Loadable loader, Savable saver, Splittable splitter) {
+    protected boolean isLoaded;
+    protected boolean isSplitted;
+
+    public BasicDataModel(@NotNull Loadable loader, Savable saver, Splittable splitter) {
         this.loader = loader;
         this.saver = saver;
         this.splitter = splitter;
+
+        this.isLoaded = false;
+        this.isSplitted = false;
     }
 
-    public BasicDataModel(Convertible converter, Savable saver, Splittable splitter) {
+    public BasicDataModel(@NotNull Convertible converter, Savable saver, Splittable splitter) {
         this.converter = converter;
         this.saver = saver;
         this.splitter = splitter;
+
+        this.isLoaded = false;
+        this.isSplitted = false;
     }
 
     @Override
-    public DataModel load() {
+    public DataModel load(){
         if (this.loader != null) {
             this.inData = this.loader.load();
         }
@@ -38,6 +48,8 @@ public class BasicDataModel implements DataModel{
             this.converter.convert();
             this.inData = converter.getDataSet();
         }
+        this.isLoaded = true;
+        this.isSplitted = false;
         return this;
     }
 
@@ -51,6 +63,9 @@ public class BasicDataModel implements DataModel{
 
     @Override
     public DataModel split() {
+        if (!this.isLoaded) {
+            this.load();
+        }
         if (this.splitter == null) {
             this.splitter = new DefaultSplitter();
         }
@@ -62,11 +77,17 @@ public class BasicDataModel implements DataModel{
 
     @Override
     public DataSet getTrainData() {
+        if (!this.isSplitted) {
+            this.split();
+        }
         return this.trainData;
     }
 
     @Override
     public DataSet getPredictData() {
+        if (!this.isSplitted) {
+            this.split();
+        }
         return this.predictData;
     }
 }
