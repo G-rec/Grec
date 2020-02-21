@@ -267,7 +267,7 @@ public class BasicRecommender extends AbstractRecommender {
 
 ~~~java
 // 导入配置文件
-import cn.cuc.grec.conf.Configable;
+import cn.cuc.grec.conf.Configurable;
 // 导入数据模型
 import cn.cuc.grec.data.DataModel;
 // 创建过滤器 -> 继承自抽象过滤器(其已实现部分功能)
@@ -279,7 +279,7 @@ public class BasicFilter extends AbstractFilter {
 	
     // 重载载入过滤函数 -> 返回this，以实现流式计算
     @Override
-    public Filtable filt(Configable conf) {
+    public Filtable filt(Configurable conf) {
         return this;
     }
 	
