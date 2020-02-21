@@ -55,6 +55,9 @@ public class BasicDataModel implements DataModel{
 
     @Override
     public DataModel save() {
+        if (!this.isLoaded) {
+            this.load();
+        }
         if (this.saver != null) {
             this.saver.save(this.inData);
         }
