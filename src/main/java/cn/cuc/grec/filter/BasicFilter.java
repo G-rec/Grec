@@ -1,6 +1,6 @@
 package cn.cuc.grec.filter;
 
-import cn.cuc.grec.conf.Configable;
+import cn.cuc.grec.conf.Configurable;
 import cn.cuc.grec.data.DataModel;
 
 public class BasicFilter extends AbstractFilter {
@@ -10,7 +10,7 @@ public class BasicFilter extends AbstractFilter {
     }
 
     @Override
-    public Filtable filt(Configable conf) {
+    public Filtable filt(Configurable conf) {
         return this;
     }
 

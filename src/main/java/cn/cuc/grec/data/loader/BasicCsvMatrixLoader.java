@@ -7,11 +7,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * A loader that can load matrix data from csv file with absolute path given.
+ * The Loader is not optimized yet so now just for testing purpose.
+ * The split sign for csv is "," by default, you can change it by using the constructor.
+ *
+ * @author Liming Liu
+ */
+
 public class BasicCsvMatrixLoader extends AbstractLoader {
     protected String splitSign = ",";
 
     public BasicCsvMatrixLoader(String url) {
         super(url);
+    }
+
+    public BasicCsvMatrixLoader(String url, String splitSign) {
+        super(url);
+        this.splitSign = splitSign;
     }
 
     @Override

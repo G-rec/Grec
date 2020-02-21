@@ -1,5 +1,10 @@
 package cn.cuc.grec.math.structure;
 
+/**
+ * An abstract Matrix that provide the basic function such as toString().
+ *
+ * @author Liming Liu
+ */
 public abstract class AbstractVect implements Vect{
     protected int size;
 

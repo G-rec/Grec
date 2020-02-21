@@ -8,6 +8,15 @@ import cn.cuc.grec.data.splitter.Splittable;
 import cn.cuc.grec.math.structure.DataSet;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * A basic dataModel.
+ * To build a BasicDataModel, a converter or a loader is needed.
+ * Saver and Splitter is optional.
+ * If the Saver is missing, the dataModel will do nothing if function save() is called.
+ * If the Splitter is missing, the dataModel will use the DefaultSplitter as default.
+ *
+ * @author Liming Liu
+ */
 public class BasicDataModel implements DataModel{
     protected Loadable loader;
     protected Savable saver;

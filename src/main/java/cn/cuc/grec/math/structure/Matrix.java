@@ -6,7 +6,7 @@ import java.util.Vector;
 
 /**
  * An abstract Matrix definition that gives the basic ways to manipulate
- * and access the data.
+ * and access the two-dimensional data.
  *
  * @author Liming Liu
  */

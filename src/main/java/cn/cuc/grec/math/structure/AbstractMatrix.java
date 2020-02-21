@@ -1,7 +1,7 @@
 package cn.cuc.grec.math.structure;
 
 /**
- * An abstract Matrix.
+ * An abstract Matrix that provide the basic function such as toString().
  *
  * @author Liming Liu
  */

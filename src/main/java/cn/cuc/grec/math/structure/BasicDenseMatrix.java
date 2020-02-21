@@ -5,9 +5,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
+/**
+ * A two-dimensional array based dense matrix without any optimisation.
+ * Now just for test purpose.
+ *
+ * @author Liming Liu
+ */
 public class BasicDenseMatrix extends AbstractMatrix {
 
-    double[][] data;
+    protected double[][] data;
 
     public BasicDenseMatrix(int rowSizeNum, int columnSizeNum) {
         super(rowSizeNum, columnSizeNum);

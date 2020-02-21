@@ -1,9 +1,9 @@
 package cn.cuc.grec.filter;
 
-import cn.cuc.grec.conf.Configable;
+import cn.cuc.grec.conf.Configurable;
 
 public interface Filtable {
-    Filtable filt(Configable conf);
+    Filtable filt(Configurable conf);
 
     Filtable merge(Filtable f);
 }

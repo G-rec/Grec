@@ -2,6 +2,12 @@ package cn.cuc.grec.math.structure;
 
 import cn.cuc.grec.commom.IndexOutOfRangeException;
 
+/**
+ * An array based dense vector without any optimisation.
+ * Now just for test purpose.
+ *
+ * @author Liming Liu
+ */
 public class BasicDenseVect extends AbstractVect{
     protected double[] data;
 
