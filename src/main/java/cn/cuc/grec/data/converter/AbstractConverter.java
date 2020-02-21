@@ -1,10 +1,11 @@
 package cn.cuc.grec.data.converter;
 
 import cn.cuc.grec.data.DataModel;
+import cn.cuc.grec.math.structure.DataSet;
 
-public abstract class AbstractConverter implements Convertable{
+public abstract class AbstractConverter implements Convertible {
     protected DataModel in;
-    protected DataModel out;
+    protected DataSet out;
 
     public AbstractConverter(DataModel in) {
         this.in = in;
@@ -12,7 +13,7 @@ public abstract class AbstractConverter implements Convertable{
     }
 
     @Override
-    public DataModel getDataModel() {
+    public DataSet getDataSet() {
         return this.out;
     }
 }

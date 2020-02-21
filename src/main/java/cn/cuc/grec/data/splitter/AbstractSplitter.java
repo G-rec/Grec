@@ -2,7 +2,7 @@ package cn.cuc.grec.data.splitter;
 
 import cn.cuc.grec.math.structure.DataSet;
 
-public abstract class AbstractSplitter implements Splitable {
+public abstract class AbstractSplitter implements Splittable {
     protected DataSet inData;
     protected DataSet trainData;
     protected DataSet predictData;

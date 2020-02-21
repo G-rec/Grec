@@ -1,7 +1,7 @@
 package cn.cuc.grec.data.saver;
 
-import cn.cuc.grec.commom.GrecException;
+import cn.cuc.grec.math.structure.DataSet;
 
 public interface Savable {
-    void save(Object o);
+    void save(DataSet o);
 }

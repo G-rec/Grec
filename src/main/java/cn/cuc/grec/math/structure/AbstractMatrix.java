@@ -41,7 +41,7 @@ public abstract class AbstractMatrix implements Matrix {
         for (int rowIndex = 0; rowIndex < maxRowsToDisplay && rowIndex < rowSize(); rowIndex++) {
             Vect vector = getRow(rowIndex);
             s.append(" ").append(rowIndex)
-                    .append(" =>\t")
+                    .append(" => ")
                     .append(vector.toString())
                     .append('\n');
         }

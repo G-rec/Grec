@@ -2,7 +2,7 @@ package cn.cuc.grec.data.splitter;
 
 import cn.cuc.grec.math.structure.DataSet;
 
-public interface Splitable {
+public interface Splittable {
     void split(DataSet in);
 
     DataSet getTrainData();

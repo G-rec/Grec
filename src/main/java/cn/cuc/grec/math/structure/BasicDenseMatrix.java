@@ -3,6 +3,8 @@ package cn.cuc.grec.math.structure;
 import cn.cuc.grec.commom.IndexOutOfRangeException;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+
 public class BasicDenseMatrix extends AbstractMatrix {
 
     double[][] data;
@@ -17,6 +19,16 @@ public class BasicDenseMatrix extends AbstractMatrix {
         this.data = new double[this.rowSizeNum][this.columnSizeNum];
         for (int i = 0; i < data.length; i++) {
             System.arraycopy(data[i], 0, this.data[i], 0, data[i].length);
+        }
+    }
+
+    public BasicDenseMatrix(@NotNull ArrayList<Double[]> data) {
+        super(data.size(), data.get(0).length);
+        this.data = new double[this.rowSizeNum][this.columnSizeNum];
+        for (int i = 0; i < data.size(); i++) {
+            for (int j = 0; j < data.get(i).length; j++) {
+                this.data[i][j] = data.get(i)[j];
+            }
         }
     }
 
