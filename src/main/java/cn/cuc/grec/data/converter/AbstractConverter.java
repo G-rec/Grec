@@ -1,6 +1,5 @@
 package cn.cuc.grec.data.converter;
 
-import cn.cuc.grec.data.DataModel;
 import cn.cuc.grec.math.structure.DataSet;
 
 /**
@@ -12,16 +11,19 @@ import cn.cuc.grec.math.structure.DataSet;
  * @author Liming Liu
  */
 public abstract class AbstractConverter implements Convertible {
-    protected DataModel in;
+    protected DataSet in;
     protected DataSet out;
 
-    public AbstractConverter(DataModel in) {
+    public AbstractConverter(DataSet in) {
         this.in = in;
         this.out = null;
     }
 
     @Override
     public DataSet getDataSet() {
+        if (this.out == null) {
+            this.convert();
+        }
         return this.out;
     }
 }

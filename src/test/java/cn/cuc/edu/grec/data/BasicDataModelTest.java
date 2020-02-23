@@ -2,7 +2,7 @@ package cn.cuc.edu.grec.data;
 
 import cn.cuc.grec.data.BasicDataModel;
 import cn.cuc.grec.data.DataModel;
-import cn.cuc.grec.data.converter.BasicMatrixConverter;
+import cn.cuc.grec.data.converter.BasicConverter;
 import cn.cuc.grec.math.structure.BasicDenseMatrix;
 
 public class BasicDataModelTest {
@@ -20,7 +20,7 @@ public class BasicDataModelTest {
                 {},
         };
 
-        DataModel dataModel = new BasicDataModel(new BasicMatrixConverter(new BasicDenseMatrix(data)), null, null);
+        DataModel dataModel = new BasicDataModel(new BasicConverter(new BasicDenseMatrix(data)), null, null);
         System.out.println(dataModel.getPredictData());
     }
 }

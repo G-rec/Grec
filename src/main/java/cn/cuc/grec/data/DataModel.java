@@ -7,7 +7,7 @@ import cn.cuc.grec.math.structure.DataSet;
  *
  * The DataModel can be loaded from disk(in format you need), database, etc by using different loader.
  * The DataModel can be converted from other dataModel or dataSet by using different converter.
- * The DataModel can be save to disk(in format you need), database, etc by using different saver.
+ * The DataModel can be saved to disk(in format you need), database, etc by using different saver.
  * The DataModel can be splitted in different ways by using divergent splitter.
  *
  * You are recommended to check if the Model is loaded before splitting and automatically load if not.
