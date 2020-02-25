@@ -12,9 +12,6 @@ import cn.cuc.grec.recommender.BasicRecommender;
 import cn.cuc.grec.recommender.Recommendable;
 
 public class TestMain {
-    public TestMain() {
-    }
-
     public static void main(String[] args) throws GrecException {
 
         // DataModel-数据模型类

@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * A basic dataModel.
- * To build a BasicDataModel, a converter or a loader is needed.
+ * To build a BasicDataModel, a converter or a loader is alternative.
  * Saver and Splitter is optional.
  * If the Saver is missing, the dataModel will do nothing if function save() is called.
  * If the Splitter is missing, the dataModel will use the DefaultSplitter as default.

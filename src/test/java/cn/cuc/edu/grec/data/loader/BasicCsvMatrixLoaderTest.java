@@ -6,7 +6,7 @@ import cn.cuc.grec.math.structure.DataSet;
 
 public class BasicCsvMatrixLoaderTest {
     public static void main(String[] args) {
-        Loadable loader = new BasicCsvMatrixLoader("U:\\0100_Works\\20200209_大创项目\\Grec\\testdata\\csv\\BasicCsvMatrixLoaderTest.csv");
+        Loadable loader = new BasicCsvMatrixLoader("test/resources/csv/BasicCsvMatrixLoaderTest.csv");
         DataSet result = loader.load();
         System.out.println(result);
     }
