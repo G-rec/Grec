@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 /**
  * A loader that can load matrix data from arff file with absolute path given.
- *
+ * The Loader is not optimized yet so now just for testing purpose.
  *
  *
  * @author Dongxia Wang
