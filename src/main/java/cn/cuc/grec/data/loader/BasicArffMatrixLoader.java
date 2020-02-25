@@ -36,7 +36,6 @@ public class BasicArffMatrixLoader extends  AbstractLoader {
         ArrayList<Double[]> input = new ArrayList<>();
 
         try {
-            Instances data1 = ConverterUtils.DataSource.read(this.url);
             ArffLoader loader = new ArffLoader();
             loader.setFile(new File(this.url));
             Instances data = loader.getDataSet();
