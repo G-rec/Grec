@@ -2,11 +2,13 @@
 
 import cn.cuc.grec.math.structure.BasicDenseMatrix;
 import cn.cuc.grec.math.structure.DataSet;
+import cn.cuc.grec.math.structure.Matrix;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.converters.ArffLoader;
+import weka.core.converters.ConverterUtils;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -30,32 +32,24 @@ public class BasicArffMatrixLoader extends  AbstractLoader {
     }
 
     @Override
-    public DataSet load() {
+    public DataSet load()  {
         ArrayList<Double[]> input = new ArrayList<>();
-        BufferedReader fileReader = null;
+
         try {
-            fileReader = new BufferedReader(new FileReader(this.url));
-            String l;
-            String DataSign = "@data";
-            while (!(l = fileReader.readLine()).equals(DataSign)) {
-                System.out.println(l);
-            }
-            while ((l = fileReader.readLine()) != null) {
-                String[] tempSplitter = l.split(this.splitSign);
-                Double[] tempDouble = new Double[tempSplitter.length];
-                for (int i = 0; i < tempSplitter.length; i++) {
-                    tempDouble[i] = Double.parseDouble(tempSplitter[i]);
-                }
-                input.add(tempDouble);
-            }
-        } catch (IOException e) {
+            Instances data1 = ConverterUtils.DataSource.read(this.url);
+            ArffLoader loader = new ArffLoader();
+            loader.setFile(new File(this.url));
+            Instances data = loader.getDataSet();
+             for ( int i = 0 ; i < data.numInstances();i++) {
+                 String[] tempSplitter = data.get(i).toString().split(this.splitSign);
+                 Double[] tempDouble = new Double[tempSplitter.length];
+                 for (int j = 0; j < tempSplitter.length; j++) {
+                     tempDouble[j] = Double.parseDouble(tempSplitter[j]);
+                 }
+                 input.add(tempDouble);
+             }
+        } catch (Exception e){
             e.printStackTrace();
-        } finally {
-            try {
-                assert fileReader != null;
-                fileReader.close();
-            } catch (IOException ignored) {
-            }
         }
         return new BasicDenseMatrix(input);
     }

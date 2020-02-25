@@ -8,7 +8,7 @@ import cn.cuc.grec.math.structure.DataSet;
 import java.io.IOException;
 
 public class BasicArffMatrixLoaderTest  {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         Loadable loader = new BasicArffMatrixLoader("C:\\Users\\18810809501\\Desktop\\2020.02\\arff\\test.arff");
         DataSet result = loader.load();
         System.out.println(result);
