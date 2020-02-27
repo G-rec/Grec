@@ -2,15 +2,11 @@
 
 import cn.cuc.grec.math.structure.BasicDenseMatrix;
 import cn.cuc.grec.math.structure.DataSet;
-import cn.cuc.grec.math.structure.Matrix;
-import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
-import weka.core.converters.ConverterUtils;
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 /**
  * A loader that can load matrix data from arff file with absolute path given.
@@ -19,7 +15,7 @@ import java.util.Arrays;
  *
  * @author Dongxia Wang
  */
-public class BasicArffMatrixLoader extends  AbstractLoader {
+public class BasicArffMatrixLoader extends AbstractLoader {
     protected String splitSign = ",";
 
     public BasicArffMatrixLoader(String url) {
