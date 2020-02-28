@@ -1,0 +1,13 @@
+@relation weather
+
+@attribute outlook numeric
+@attribute temperature numeric
+@attribute humidity numeric
+@attribute windy numeric
+@attribute play numeric
+
+@data
+1,2,3,4,5,6
+32,434,3,2,2,1
+211,12,1,1,1,1
+0,0,0,0,0,0
